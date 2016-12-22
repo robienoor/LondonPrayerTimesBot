@@ -6,7 +6,7 @@
 # This program is dedicated to the public domain under the CC0 license.
 import logging
 import telegram
-#from telegram.error import NetworkError, Unauthorized
+from telegram.error import NetworkError, Unauthorized
 from time import sleep
 import fetchPrayerTimes
 #from nltk.tokenize import TweetTokenizer

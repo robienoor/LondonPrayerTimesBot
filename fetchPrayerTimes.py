@@ -1,10 +1,6 @@
-from bs4 import BeautifulSoup
-import requests
 import json
-import time
 import pandas as pd
 import datetime
-from tabulate import tabulate
 
 def getPrayerTimes(mosque, timeShift):
 
@@ -66,14 +62,6 @@ def constructDailyTimeString(timeRow):
              % (timeRow.loc["Date"], timeRow.loc["FajrStart"], timeRow.loc["FajrPray"], timeRow.loc["Sunrise"], "  ",
                 timeRow.loc["DhuhrStart"], timeRow.loc["DhuhrPray"], timeRow.loc["AsrStart"], timeRow.loc["AsrPray"],
                 timeRow.loc["MaghribStart"], timeRow.loc["MaghribPray"], timeRow.loc["IshaStart"], timeRow.loc["IshaPray"])
-
-    # message = tabulate([["Fajr", timeRow.loc["FajrStart"], timeRow.loc["FajrPray"]],
-    #           ["Sunrise", timeRow.loc["Sunrise"], " "],
-    #           ["Dhuhr", timeRow.loc["DhuhrStart"], timeRow.loc["DhuhrPray"]],
-    #           ["Asr", timeRow.loc["AsrStart"], timeRow.loc["AsrPray"]],
-    #           ["Maghrib", timeRow.loc["MaghribStart"], timeRow.loc["MaghribPray"]],
-    #           ["Isha", timeRow.loc["IshaStart"], timeRow.loc["IshaPray"]]],
-    #           headers = ["Prayer", "Start", "End"], tablefmt='grid')
 
     print(message)
 
